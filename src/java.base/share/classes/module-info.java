@@ -347,9 +347,9 @@ module java.base {
         jdk.security.auth,
         jdk.security.jgss;
     exports sun.security.util.math to
-        jdk.crypto.ec
+        jdk.crypto.ec;
     exports sun.security.util.math.intpoly to
-        jdk.crypto.ec
+        jdk.crypto.ec;
     exports sun.security.x509 to
 /*[IF OPENJCEPLUS_SUPPORT]*/
         openjceplus,

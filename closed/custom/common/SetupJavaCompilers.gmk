@@ -24,6 +24,7 @@ WARNING_MODULES := \
 	openj9.dtfj \
 	openj9.dtfjview \
 	openj9.traceformat \
+	openjceplus \
 	#
 
 ifneq (,$(filter $(WARNING_MODULES),$(MODULE)))

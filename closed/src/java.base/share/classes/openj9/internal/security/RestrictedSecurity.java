@@ -1031,31 +1031,6 @@ public final class RestrictedSecurity {
             Set<String> availableProfiles = new HashSet<>();
             Pattern profileNamePattern = Pattern.compile("^(RestrictedSecurity\\.\\S+)\\.desc\\.name");
             for(Object securityFileObject : securityProps.keySet()) {
-                if (securityFileObject instanceof String key) {
-                    Matcher profileMatcher = profileNamePattern.matcher(key);
-                    if (profileMatcher.matches()) {
-                        availableProfiles.add(profileMatcher.group(1));
-                    }
-                }
-            }
-            System.out.println("The available Restricted Security profiles:\n");
-
-            for (String availableProfile : availableProfiles) {
-                printProfile(availableProfile);
-            }
-        }
-
-        /**
-         * List audit info of all available RestrictedSecurity profiles.
-         */
-        private void listAvailableProfiles() {
-            System.out.println();
-            System.out.println("Restricted Security Available Profiles' Info:");
-            System.out.println("=============================================");
-
-            Set<String> availableProfiles = new HashSet<>();
-            Pattern profileNamePattern = Pattern.compile("^(RestrictedSecurity\\.\\S+)\\.desc\\.name");
-            for(Object securityFileObject : securityProps.keySet()) {
                 if (securityFileObject instanceof String) {
                     String key = (String) securityFileObject;
                     Matcher profileMatcher = profileNamePattern.matcher(key);
