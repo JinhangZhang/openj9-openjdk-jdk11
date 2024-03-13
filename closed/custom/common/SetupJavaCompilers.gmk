@@ -24,8 +24,13 @@ WARNING_MODULES := \
 	openj9.dtfj \
 	openj9.dtfjview \
 	openj9.traceformat \
+	openjceplus \
 	#
 
 ifneq (,$(filter $(WARNING_MODULES),$(MODULE)))
   JAVAC_WARNINGS := -Xlint:-removal
 endif
+
+# Required by OpenJCEPlus.
+BUILD_OPENJCEPLUS  := @BUILD_OPENJCEPLUS@
+OPENJCEPLUS_TOPDIR := $(TOPDIR)/OpenJCEPlus
