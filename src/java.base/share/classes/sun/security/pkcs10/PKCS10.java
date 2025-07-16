@@ -232,10 +232,15 @@ public class PKCS10 {
          */
         AlgorithmId algId = null;
         try {
+            System.out.println("PKCS10 before AlgorithmParameters params = signature.getParameters(); signature.getAlgorithm() is: " + signature.getAlgorithm());
             AlgorithmParameters params = signature.getParameters();
+            System.out.println("PKCS10 after AlgorithmParameters params = signature.getParameters();");
             algId = params == null
                     ? AlgorithmId.get(signature.getAlgorithm())
                     : AlgorithmId.get(params);
+        } catch (UnsupportedOperationException e) {
+            // some provider does not support it
+            System.out.println("PKCS10 signature.getParameters() catch UnsupportedOperationException: some provider does not support it");
         } catch (NoSuchAlgorithmException nsae) {
             throw new SignatureException(nsae);
         }

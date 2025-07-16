@@ -1651,6 +1651,7 @@ public final class Main {
         }
 
         Signature signature = Signature.getInstance(sigAlgName);
+        System.out.println("sigAlgName is: " + sigAlgName + ", provider is: " + signature.getProvider().getName());
         AlgorithmParameterSpec params = AlgorithmId
                 .getDefaultAlgorithmParameterSpec(sigAlgName, privKey);
         SignatureUtil.initSignWithParam(signature, privKey, params, null);
