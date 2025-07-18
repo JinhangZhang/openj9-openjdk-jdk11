@@ -87,8 +87,10 @@ public final class KeyUtil {
             RSAKey pubk = (RSAKey)key;
             size = pubk.getModulus().bitLength();
         } else if (key instanceof ECKey) {
+            System.out.println("KeyUtil.getKeySize(key)");
             ECKey pubk = (ECKey)key;
             size = pubk.getParams().getOrder().bitLength();
+            System.out.println("KeyUtil.getKeySize(key) size is: " + size);
         } else if (key instanceof DSAKey) {
             DSAKey pubk = (DSAKey)key;
             DSAParams params = pubk.getParams();    // params can be null

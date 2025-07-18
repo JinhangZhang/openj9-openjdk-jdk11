@@ -711,17 +711,22 @@ public class AlgorithmId implements Serializable, DerEncoder {
      * @return the default alg, might be null if unsupported
      */
     public static String getDefaultSigAlgForKey(PrivateKey k) {
+        System.out.println("default signature algorithm for a private key is: " + k.getAlgorithm());
         switch (k.getAlgorithm().toUpperCase(Locale.ENGLISH)) {
             case "EC":
+                System.out.println("default signature algorithm for a private key is EC, and the bitLength is: " + KeyUtil.getKeySize(k));
                 return ecStrength(KeyUtil.getKeySize(k))
                     + "withECDSA";
             case "DSA":
+                System.out.println("default signature algorithm for a private key is DSA");
                 return ifcFfcStrength(KeyUtil.getKeySize(k))
                     + "withDSA";
             case "RSA":
+                System.out.println("default signature algorithm for a private key is RSA");
                 return ifcFfcStrength(KeyUtil.getKeySize(k))
                     + "withRSA";
             case "RSASSA-PSS":
+                System.out.println("default signature algorithm for a private key is RSASSA-PSS");
                 return "RSASSA-PSS";
             default:
                 return null;

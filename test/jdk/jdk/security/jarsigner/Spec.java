@@ -199,6 +199,7 @@ public class Spec {
                 .getDefaultSignatureAlgorithm(kpg.generateKeyPair().getPrivate())
                 .equals("SHA384withECDSA"));
         kpg.initialize(571);
+        System.out.println("571: -> " + JarSigner.Builder.getDefaultSignatureAlgorithm(kpg.generateKeyPair().getPrivate()));
         assertTrue(JarSigner.Builder
                 .getDefaultSignatureAlgorithm(kpg.generateKeyPair().getPrivate())
                 .equals("SHA512withECDSA"));
