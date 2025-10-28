@@ -21,6 +21,7 @@
 # Exclude tests list from jdk_security tests
 #
 com/sun/crypto/provider/DHKEM/Compliance.java https://github.ibm.com/runtimes/jit-crypto/issues/773 generic-all
+java/security/KeyPairGenerator/SolarisShortDSA.java https://github.ibm.com/runtimes/jit-crypto/issues/773 generic-all
 java/security/Provider/SecurityProviderModularTest.java https://github.com/eclipse-openj9/openj9/issues/22242 generic-all
 java/security/SecureRandom/DefaultAlgo.java https://github.com/ibmruntimes/openj9-openjdk-jdk/issues/994 generic-all
 java/security/SecureRandom/DefaultProvider.java https://github.com/ibmruntimes/openj9-openjdk-jdk/issues/994 generic-all
